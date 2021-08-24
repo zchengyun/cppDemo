@@ -16,8 +16,7 @@ int main()
 	b = &a;
     assert(b);
 
-
-    Ctype* ctype = new Ctype();
+	std::unique_ptr<Ctype> ctype = std::make_unique<Ctype>();
     assert(!isalnum(ctype->m_i));//是数字或者字母？
     assert(!isdigit(ctype->m_i));//是数字？
     assert(!islower(ctype->m_str[ctype->m_i]));//是小写字母？
